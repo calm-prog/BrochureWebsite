@@ -48,6 +48,7 @@ header {
     height: 100vh;
     transition: all 0.5s ease-in;
     display: flex;
+    justify-content: space-evenly;
 
     &.show {
       transform: translateY(0);
@@ -55,30 +56,33 @@ header {
     }
   }
 
-  &-item-image {
-    width: 50%;
-    display: flex;
+  &-vid-container {
+    opacity: 0;
+    position: absolute;
+    margin-left: -40em;
+    z-index: -1;
     align-items: center;
-    justify-content: center;
 
     video {
-      width: 50%;
       border-radius: 0.5em;
+      width: 40%;
     }
   }
 
   &-nav {
-    width: 50%;
     height: 100vh;
     float: right;
     display: flex;
     justify-content: center;
     flex-flow: column;
     list-style: none;
-    margin: 0;
+    margin-left: 16em;
     padding-left: 0;
 
     &.show {
+      div {
+        animation: fadeInFirst 1s ease forwards;
+      }
 
       li {
         animation: fadeInRight 3s ease forwards;
@@ -119,6 +123,14 @@ header {
   &-item a {
     font-size: 3rem;
     color: rgba(0, 0, 0, 0.623);
+  }
+
+  .current-page {
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    img {
+      display: none;
+    }
   }
 }
 
@@ -216,4 +228,34 @@ header {
 
 .menu-btn.close .menu-btn-burger::after {
   transform: translateY(0);
+}
+
+#menu-our-coffee:hover ~ .menu-vid-container {
+  animation: fadeIn 1s ease forwards;
+}
+
+#menu-contact:hover ~ .menu-vid-container {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeInFirst {
+  
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
 }

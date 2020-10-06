@@ -47,6 +47,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .menu-nav-container.show {
@@ -55,26 +58,22 @@ header {
   opacity: 1;
 }
 
-.menu-item-image {
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.menu-vid-container {
+  opacity: 0;
+  position: absolute;
+  margin-left: -40em;
+  z-index: -1;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-.menu-item-image video {
-  width: 50%;
+.menu-vid-container video {
   border-radius: 0.5em;
+  width: 40%;
 }
 
 .menu-nav {
-  width: 50%;
   height: 100vh;
   float: right;
   display: -webkit-box;
@@ -88,8 +87,13 @@ header {
       -ms-flex-flow: column;
           flex-flow: column;
   list-style: none;
-  margin: 0;
+  margin-left: 16em;
   padding-left: 0;
+}
+
+.menu-nav.show div {
+  -webkit-animation: fadeInFirst 1s ease forwards;
+          animation: fadeInFirst 1s ease forwards;
 }
 
 .menu-nav.show li {
@@ -136,6 +140,15 @@ header {
 .menu-item a {
   font-size: 3rem;
   color: rgba(0, 0, 0, 0.623);
+}
+
+.menu .current-page {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+}
+
+.menu .current-page img {
+  display: none;
 }
 
 @-webkit-keyframes fadeInRight {
@@ -266,5 +279,51 @@ header {
 .menu-btn.close .menu-btn-burger::after {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+#menu-our-coffee:hover ~ .menu-vid-container {
+  -webkit-animation: fadeIn 1s ease forwards;
+          animation: fadeIn 1s ease forwards;
+}
+
+#menu-contact:hover ~ .menu-vid-container {
+  -webkit-animation: fadeIn 1s ease forwards;
+          animation: fadeIn 1s ease forwards;
+}
+
+@-webkit-keyframes fadeInFirst {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFirst {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -32,3 +32,15 @@ const toggleMenu = () => {
 }
 
 menuBtn.addEventListener('click', toggleMenu);
+
+hoverOnCoffee = () => {
+  document.getElementById('menu-vid').src = "/media/vid/our-coffee.mp4";
+}
+
+hoverOnContact = () => {
+  document.getElementById('menu-vid').src = "/media/vid/contact.mp4";
+}
+ 
+resetSrc = () => {
+  document.getElementById('menu-vid').src = "/media/vid/welcome.mp4";
+}
